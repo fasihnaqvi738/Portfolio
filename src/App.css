@@ -98,6 +98,16 @@ html[data-theme='dark'] .repo-note{color:#c0c4ba}
 @media(max-width:460px){.header-contact{display:none}}
 @media(max-width:360px){.site-header{padding-inline:14px;gap:8px}.wordmark{font-size:12px;gap:6px}.wordmark-mark{font-size:21px}.theme-control{gap:5px}.theme-label{font-size:11px}.theme-toggle{width:30px;height:30px}.menu-toggle{width:32px}}
 html[data-theme='dark'] .hero-visual,html[data-theme='dark'] .contact-panel{--paper:#f7f9f5}
+
+.brand-monogram{position:relative;display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:11px;background:#20231d;color:#f8f9fa;letter-spacing:normal}
+.brand-monogram>span{font:800 17px/1 var(--display);letter-spacing:-1.8px;color:#f8f9fa;transform:translateX(-1px)}
+.brand-monogram>i{position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:#d3ee63}
+.brand-monogram-footer{width:28px;height:28px;border-radius:7px}
+.brand-monogram-footer>span{font-size:11px;letter-spacing:-1.2px}
+.brand-monogram-footer>i{top:4px;right:4px;width:4px;height:4px}
+.contact-section footer>a:first-child .brand-monogram>span{color:#f8f9fa}
+@media(max-width:680px){.brand-monogram{width:38px;height:38px;border-radius:10px}}
+@media(max-width:360px){.brand-monogram{width:34px;height:34px;border-radius:9px}}
 .section-heading .eyebrow span{color:var(--accent-blue)}
 .projects-section{background:#ece8df}
 .project-card{border-top:2px solid var(--accent-teal)}
