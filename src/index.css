@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+:root{font-family:'DM Sans',sans-serif;font-synthesis:none;text-rendering:optimizeLegibility;font-weight:400;color-scheme:light;}
+#root{min-height:100vh;}
