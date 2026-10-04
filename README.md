@@ -2,6 +2,8 @@
 
 A personal portfolio for my work across software engineering, AI, and machine learning. It presents selected projects, my education and skills, certificates, and ways to get in touch.
 
+**Live portfolio:** [fasihnaqvi.web.app](https://fasihnaqvi.web.app/)
+
 ## Built with
 
 - React and TypeScript
@@ -46,16 +48,10 @@ Project cards are rendered from the project data rather than being written indiv
 
 ## Deployment
 
-The app can be deployed as a static Vite site on Vercel's free tier:
-
-1. Import this GitHub repository into Vercel.
-2. Keep the framework preset as **Vite**.
-3. Use `npm run build` as the build command and `dist` as the output directory.
-4. Deploy.
-
-No environment variables are required for the portfolio itself.
+The portfolio is deployed at [https://fasihnaqvi.web.app/](https://fasihnaqvi.web.app/). To generate the static production files locally, run `npm run build`; Vite writes them to `dist/`.
 
 ## Links
 
 - GitHub: [fasihnaqvi738](https://github.com/fasihnaqvi738)
 - Portfolio repository: [Portfolio](https://github.com/fasihnaqvi738/Portfolio)
+- Live website: [fasihnaqvi.web.app](https://fasihnaqvi.web.app/)
