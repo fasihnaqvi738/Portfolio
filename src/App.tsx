@@ -92,7 +92,6 @@ function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth' })
   }
   const socialLinks = [
-    { label: 'GitHub', href: profile.github, icon: Code2 },
     ...(profile.linkedin ? [{ label: 'LinkedIn', href: profile.linkedin, icon: Network }] : []),
     ...(profile.email ? [{ label: 'Email', href: `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}&su=Portfolio%20inquiry`, icon: Mail }] : []),
   ]
