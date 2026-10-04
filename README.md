@@ -42,7 +42,6 @@ The production build is written to `dist/`.
 - **Skills and education:** Edit the `skillGroups` and `education` data in `src/data/site.ts`.
 - **Certifications:** Add or edit entries in `src/data/certifications.ts`.
 - **Profile links and contact details:** Update the `profile` object in `src/data/site.ts`.
-- **Resume:** Replace `public/resume.pdf` with the current resume, keeping the same filename, or update `resumeUrl` in the profile data.
 
 Project cards are rendered from the project data rather than being written individually in the UI.
 

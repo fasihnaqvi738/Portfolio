@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "personal-portfolio-f2d31"
+  },
+  "targets": {
+    "personal-portfolio-f2d31": {
+      "hosting": {
+        "portfolio": [
+          "fasihnaqvi"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

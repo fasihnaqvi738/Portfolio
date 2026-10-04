@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight, Braces, Check, Code2, Download, Network, Mail, Menu, X } from 'lucide-react'
+import { ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight, Braces, Check, Code2, Moon, Network, Mail, Menu, Sun, X } from 'lucide-react'
 import { education, navigation, profile, projects, skillGroups, type Project } from './data/site'
 import { certifications } from './data/certifications'
 import { ProjectArtwork } from './components/ProjectArtwork'
@@ -50,10 +50,34 @@ function ProjectDialog({ project, onClose }: { project: Project; onClose: () => 
 }
 
 function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => document.documentElement.dataset.theme === 'light' ? 'light' : 'dark')
   const [active, setActive] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const reduceMotion = useReducedMotion()
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)')
+    const syncSystemTheme = (event: MediaQueryListEvent) => {
+      let savedTheme: string | null = null
+      try {
+        savedTheme = localStorage.getItem('fasih-portfolio-theme')
+      } catch { /* Treat unavailable storage as no saved preference. */ }
+      if (savedTheme === 'light' || savedTheme === 'dark') return
+      const nextTheme = event.matches ? 'dark' : 'light'
+      document.documentElement.dataset.theme = nextTheme
+      setTheme(nextTheme)
+    }
+    media.addEventListener('change', syncSystemTheme)
+    return () => media.removeEventListener('change', syncSystemTheme)
+  }, [])
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    document.documentElement.dataset.theme = nextTheme
+    setTheme(nextTheme)
+    try { localStorage.setItem('fasih-portfolio-theme', nextTheme) } catch { /* Keep the selected theme for this page session. */ }
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -76,7 +100,8 @@ function App() {
   return <>
     <a className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-[#d3ee63] focus:px-4 focus:py-3 focus:text-sm" href="#main-content">Skip to content</a>
     <header className="site-header"><a className="wordmark" href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home') }} aria-label={`${profile.name}, home`}><span className="wordmark-mark">F<span>.</span></span><span>{profile.name}<small>SOFTWARE · AI</small></span></a>
-      <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">{navigation.map(([label, id]) => <a key={id} className={active === id ? 'active' : ''} href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id) }}>{label}</a>)}<a className="nav-resume" href={profile.resumeUrl} download="Syed-Mohd-Fasih-Naqvi-Resume.pdf"><Download size={14} /> Resume</a></nav>
+      <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">{navigation.map(([label, id]) => <a key={id} className={active === id ? 'active' : ''} href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id) }}>{label}</a>)}</nav>
+      <div className="theme-control"><span className="theme-label">Theme</span><button className="theme-toggle icon-button" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} aria-pressed={theme === 'dark'} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>{theme === 'dark' ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}</button></div>
       <a className="header-contact" href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact') }}>Let’s talk <ArrowUpRight size={15} /></a>
       <button className="menu-toggle icon-button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
     </header>

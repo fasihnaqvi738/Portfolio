@@ -5,7 +5,6 @@ export const profile = {
   leetcode: 'https://leetcode.com/u/fasihnaqvi738/',
   linkedin: 'https://www.linkedin.com/in/fasihnaqvi738',
   email: 'fasihnaqvi738@gmail.com',
-  resumeUrl: '/resume.pdf',
 }
 
 export type Project = {

@@ -5,6 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f7f9f5" />
+    <script>
+      (() => {
+        const key = 'fasih-portfolio-theme';
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem(key); } catch { /* Storage can be unavailable in private contexts. */ }
+        const theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? true) ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     <meta name="description" content="Syed Mohd Fasih Naqvi is a software engineer in New Delhi building practical software and AI systems across full-stack engineering, machine learning, and GenAI." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Syed Mohd Fasih Naqvi — Software Engineer · AI/ML" />
