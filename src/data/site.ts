@@ -134,7 +134,7 @@ export const projects: Project[] = [
 ]
 
 export const skillGroups = [
-  { title: 'Programming', note: 'Languages & data', skills: ['Python', 'C++', 'JavaScript', 'TypeScript', 'SQL'] },
+  { title: 'Programming', note: 'Languages & data', skills: ['Python', 'C', 'JavaScript', 'SQL'] },
   { title: 'Software & Backend', note: 'Building blocks', skills: ['FastAPI', 'REST APIs', 'React', 'PostgreSQL', 'JWT', 'Git', 'GitHub'] },
   { title: 'AI & Machine Learning', note: 'Areas I work in', skills: ['Machine Learning', 'NLP', 'Generative AI', 'LLM Applications', 'RAG', 'FAISS', 'Embeddings', 'Prompt Engineering'] },
   { title: 'Currently Developing', note: 'Learning in practice', skills: ['AI Deployment', 'RAG Systems', 'LLM Application Development', 'Scalable AI Systems'] },
