@@ -141,7 +141,7 @@ export const skillGroups = [
 ]
 
 export const education: { school: string; logo: string; degree: string; detail: string; index: string; minors?: string }[] = [
-  { school: 'IIT Madras', logo: '/assets/iit-madras-logo.webp', degree: 'B.S. in Data Science and Applications', minors: 'Economics and Finance, Computer Systems', detail: 'Graduated 2026', index: '01' },
+  { school: 'Indian Institute of Technology Madras', logo: '/assets/iit-madras-logo.webp', degree: 'B.S. in Data Science and Applications', minors: 'Economics and Finance, Computer Systems', detail: 'Graduated 2026', index: '01' },
   { school: 'Jamia Hamdard', logo: '/assets/jamia-hamdard-logo.png', degree: 'B.Tech in Computer Science and Engineering (Artificial Intelligence)', detail: 'Graduated 2025', index: '02' },
 ]
 
